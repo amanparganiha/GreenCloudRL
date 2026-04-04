@@ -1,0 +1,65 @@
+
+============================================================
+Decision 1
+============================================================
+Decision: Assigned task to VM-0 on Server-1
+
+Top factors influencing this decision:
+  1. S1_VM0_Idle = 1.000 (importance: 0.0102, increased likelihood)
+  2. S2_VM2_Idle = 1.000 (importance: 0.0050, increased likelihood)
+  3. S9_VM1_Mem_util = 0.000 (importance: 0.0038, increased likelihood)
+  4. S1_VM0_CPU_util = 0.000 (importance: 0.0036, increased likelihood)
+  5. S9_VM3_CPU_util = 0.000 (importance: 0.0027, increased likelihood)
+
+
+============================================================
+Decision 2
+============================================================
+Decision: Assigned task to VM-1 on Server-3
+
+Top factors influencing this decision:
+  1. S6_VM2_Idle = 1.000 (importance: 0.0062, increased likelihood)
+  2. S2_VM2_Idle = 1.000 (importance: 0.0058, increased likelihood)
+  3. S8_VM0_Idle = 1.000 (importance: 0.0040, increased likelihood)
+  4. S9_VM3_Idle = 1.000 (importance: 0.0035, increased likelihood)
+  5. S3_VM1_Idle = 1.000 (importance: 0.0034, increased likelihood)
+
+
+============================================================
+Decision 3
+============================================================
+Decision: Assigned task to VM-2 on Server-7
+
+Top factors influencing this decision:
+  1. S5_VM0_Idle = 1.000 (importance: 0.0060, increased likelihood)
+  2. S2_VM2_Idle = 1.000 (importance: 0.0055, increased likelihood)
+  3. S7_VM2_Idle = 1.000 (importance: 0.0040, increased likelihood)
+  4. S0_VM1_Idle = 1.000 (importance: 0.0038, increased likelihood)
+  5. S6_VM1_Idle = 1.000 (importance: 0.0036, increased likelihood)
+
+
+============================================================
+Decision 4
+============================================================
+Decision: Assigned task to VM-2 on Server-6
+
+Top factors influencing this decision:
+  1. S2_VM2_Idle = 1.000 (importance: 0.0106, increased likelihood)
+  2. S1_VM4_Idle = 1.000 (importance: 0.0059, increased likelihood)
+  3. S6_VM2_Idle = 1.000 (importance: 0.0053, increased likelihood)
+  4. S9_VM3_Idle = 1.000 (importance: 0.0049, increased likelihood)
+  5. S0_VM1_Idle = 1.000 (importance: 0.0049, increased likelihood)
+
+
+============================================================
+Decision 5
+============================================================
+Decision: Assigned task to VM-2 on Server-2
+
+Top factors influencing this decision:
+  1. S8_VM1_CPU_util = 0.000 (importance: 0.0046, increased likelihood)
+  2. S0_VM2_Queue_len = 0.000 (importance: 0.0044, increased likelihood)
+  3. S2_VM2_Queue_len = 0.000 (importance: 0.0039, increased likelihood)
+  4. S8_VM4_Idle = 1.000 (importance: 0.0037, increased likelihood)
+  5. S7_VM3_Mem_util = 0.000 (importance: 0.0037, increased likelihood)
+

@@ -1,0 +1,98 @@
+# ============================================
+# GreenCloudRL - Default Configuration
+# ============================================
+
+# --- Environment ---
+env:
+  num_servers: 10
+  vms_per_server: 5
+  max_queue_size: 500
+  simulation_time: 3600        # 1 hour in seconds
+  time_step: 1.0               # 1 second resolution
+  seed: 42
+
+# --- Server Hardware ---
+server:
+  cpu_capacity: 100.0          # MIPS or normalized units
+  memory_capacity: 64.0        # GB
+  disk_capacity: 500.0         # GB
+  bandwidth_capacity: 10.0     # Gbps
+  power_idle: 120.0            # Watts (idle)
+  power_max: 200.0             # Watts (full load)
+  boot_delay: 30.0             # Seconds to power on
+  dvfs_levels: [0.6, 0.8, 1.0] # Frequency scaling factors
+
+# --- Task Generation ---
+task:
+  arrival_rate: 5.0            # Tasks per second (Poisson)
+  cpu_range: [1.0, 30.0]       # CPU requirement range
+  memory_range: [0.5, 8.0]     # Memory requirement range (GB)
+  duration_range: [5.0, 120.0] # Task duration range (seconds)
+  deadline_slack: [1.2, 3.0]   # Deadline = duration * slack_factor
+  types: ["compute", "memory", "io", "mixed"]
+
+# --- Reward Function ---
+reward:
+  alpha: 0.4                   # Makespan weight
+  beta: 0.4                    # Energy weight
+  gamma: 0.2                   # SLA violation weight
+  sla_penalty_factor: 10.0     # Penalty per second of deadline miss
+
+# --- Low-Level Agent (A2C) ---
+low_level:
+  actor_lr: 3.0e-4
+  critic_lr: 1.0e-3
+  gamma: 0.99                  # Discount factor
+  entropy_coeff: 0.01
+  value_loss_coeff: 0.5
+  max_grad_norm: 0.5
+  n_steps: 5                   # N-step returns
+  hidden_sizes: [256, 256, 128]
+
+# --- High-Level Agent (PPO) ---
+high_level:
+  lr: 3.0e-4
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_epsilon: 0.2
+  entropy_coeff: 0.01
+  value_loss_coeff: 0.5
+  max_grad_norm: 0.5
+  ppo_epochs: 4
+  minibatch_size: 64
+  hidden_sizes: [128, 128]
+  decision_interval: 10        # Every N tasks
+
+# --- Meta-Learning (Reptile) ---
+meta:
+  meta_lr: 1.0
+  meta_lr_decay: 0.999
+  meta_lr_min: 0.1
+  inner_steps: 5
+  tasks_per_batch: 4
+  num_meta_iterations: 1000
+  adaptation_episodes: 5       # For evaluation
+
+# --- Explainability ---
+explain:
+  num_background_samples: 100
+  num_explain_samples: 200
+  top_k_features: 5
+
+# --- Training ---
+training:
+  total_episodes: 2000
+  eval_interval: 50
+  save_interval: 100
+  log_interval: 10
+  num_eval_episodes: 10
+  num_seeds: 10                # For final experiments
+  use_wandb: true
+  project_name: "GreenCloudRL"
+
+# --- Paths ---
+paths:
+  data_dir: "data"
+  results_dir: "results"
+  checkpoint_dir: "results/checkpoints"
+  figures_dir: "results/figures"

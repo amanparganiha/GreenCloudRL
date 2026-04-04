@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+venv/
+data/raw/
+*.gz
+*.pt
+*.pth
+*.ckpt
+wandb/
+*.log
+results/checkpoints/
+7.0.0
+greencloudrl.log
