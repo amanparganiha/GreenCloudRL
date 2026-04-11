@@ -81,10 +81,7 @@ Top factors influencing this decision:
 
 ## Architecture
 
-```
 ![GreenCloudRL Architecture](results/figures/architecture.png)
-
-```
 
 ---
 
