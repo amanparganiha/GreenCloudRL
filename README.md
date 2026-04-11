@@ -82,26 +82,8 @@ Top factors influencing this decision:
 ## Architecture
 
 ```
-┌────────────────────────────────────────────────────────────────── ┐
-│                      GreenCloudRL Framework                       │
-│                                                                   │
-│   ┌──────────────┐     policy embedding     ┌───────────────┐     │
-│   │  High-Level   │ ────────────────────▶  │   Low-Level    │    │
-│   │  PPO Agent    │                         │   A2C Agent    │    │
-│   │  (Server Mgmt)│                         │   (Task → VM)  │    │
-│   └───────┬───────┘                         └───────┬────────┘    │
-│           │ every N steps                           │ per task    │
-│   ┌───────▼─────────────────────────────────────────▼──────────┐  │
-│   │              SimPy Cloud Simulator (Gym-compatible)        │  │
-│   │   [Servers] [VMs] [Task Queue] [Energy Model] [SLA Track]  │  │
-│   └─────────────────────────────────────────────────────────────┘ │
-│                                                                   │
-│   ┌──────────────────┐              ┌────────────────────────┐    │
-│   │  Reptile          │              │  SHAP Explainability  │    │
-│   │  Meta-Learning    │              │  + NL Explanations    │    │
-│   │  (40 distributions)│             │  (Post-training)      │    │
-│   └──────────────────┘              └────────────────────────┘    │
-└──────────────────────────────────────────────────────────────────┘
+![GreenCloudRL Architecture](results/figures/architecture.png)
+
 ```
 
 ---
